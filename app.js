@@ -2220,7 +2220,7 @@ class ArtesForm {
 // ============================================
 // Envio do Briefing
 // ============================================
-const API_URL = "https://orders-api-652400782573.southamerica-east1.run.app"; // atualize após mapear o domínio
+const API_URL = "https://orders-api-652400782573.southamerica-east1.run.app/orders"; // atualize após mapear o domínio
 
 async function enviarPedido(formData) {
     // reCAPTCHA v3 — executa no "action: submit"
@@ -2343,4 +2343,5 @@ function showSuccessMessage(orderId) {
         successMessage.classList.remove('show');
     }, 5000);
 }
+
 
