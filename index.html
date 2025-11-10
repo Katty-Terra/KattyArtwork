@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KattyArtwork - Create your custom artwork ✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdVewcsAAAAAH2u_M7AxGUEQdvTiONNRwv4B0AX"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1 class="site-title">Katty's Artwork</h1>
+                </div>
+                
+                <div class="contacts-section">
+                    <div class="contacts-icons" role="list">
+                        <a 
+                            href="https://barq.social" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="contact-icon"
+                            aria-label="Open profile on Barq!"
+                            role="listitem"
+                        >
+                            <img src="figure/icon/barq.png" alt="Barq!" class="contact-icon-img">
+                        </a>
+                        <a 
+                            href="https://x.com" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="contact-icon"
+                            aria-label="Open profile on X (Twitter)"
+                            role="listitem"
+                        >
+                            <img src="figure/icon/x.png" alt="X (Twitter)" class="contact-icon-img">
+                        </a>
+                        <a 
+                            href="https://t.me" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="contact-icon"
+                            aria-label="Open profile on Telegram"
+                            role="listitem"
+                        >
+                            <img src="figure/icon/telegram.png" alt="Telegram" class="contact-icon-img">
+                        </a>
+                        <a 
+                            href="https://discord.com" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="contact-icon"
+                            aria-label="Open profile on Discord"
+                            role="listitem"
+                        >
+                            <img src="figure/icon/discord.png" alt="Discord" class="contact-icon-img">
+                        </a>
+                        <a 
+                            href="https://www.patreon.com" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="contact-icon"
+                            aria-label="Open profile on Patreon"
+                            role="listitem"
+                        >
+                            <img src="figure/icon/patreon.png" alt="Patreon" class="contact-icon-img">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h2 class="section-group-title">Initial Section</h2>
+            
+            <section class="cliente-section">
+                <div class="card cliente" id="cliente-card">
+                    <header class="card-title">🧑‍🎨 Client Information</header>
+                    
+                    <div class="field-row">
+                        <div class="field field-name">
+                            <label for="cli-nome">How would you like to be called? *</label>
+                            <input 
+                                id="cli-nome" 
+                                name="cliente.nome" 
+                                type="text" 
+                                placeholder="Your name or nickname" 
+                                required
+                                aria-required="true"
+                            >
+                            <small class="hint">Required</small>
+                        </div>
+                        <div class="field field-pronouns">
+                            <label for="cli-pronomes">Pronouns *</label>
+                            <select 
+                                id="cli-pronomes" 
+                                name="cliente.pronomes" 
+                                required
+                                aria-required="true"
+                            >
+                                <option value="">Select</option>
+                                <option value="he/him">He/Him</option>
+                                <option value="she/her">She/Her</option>
+                                <option value="they/them">They/Them</option>
+                                <option value="any">Any</option>
+                            </select>
+                            <small class="hint">Required</small>
+                        </div>
+                    </div>
+                    
+                    <div class="field-group">
+                        <div class="required-contacts">
+                            <div class="field field-email">
+                                <label for="cli-email">Email *</label>
+                                <input 
+                                    id="cli-email" 
+                                    name="cliente.email" 
+                                    type="email" 
+                                    placeholder="your@email.com" 
+                                    required
+                                    aria-required="true"
+                                >
+                                <small class="hint">Required</small>
+                            </div>
+                            <div class="field field-phone">
+                                <label for="cli-telefone">Phone *</label>
+                                <input 
+                                    id="cli-telefone" 
+                                    name="cliente.telefone" 
+                                    type="tel" 
+                                    placeholder="+1 234 567 8900" 
+                                    required
+                                    aria-required="true"
+                                    maxlength="100"
+                                >
+                                <small class="hint">Required - Accepts numbers from any country</small>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-add" id="add-contact" aria-label="Add new contact">
+                            ＋ Add contact
+                        </button>
+                        <div class="contacts" id="contacts-list" aria-live="polite"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="termos-section">
+                <div class="card termos" id="termos-card">
+                    <header class="card-title">📜 Terms of Service</header>
+                    
+                    <div class="termos-content-wrapper">
+                        <div class="termos-content-box" id="tos-content">
+                            <div class="termos-content-title">Terms of Service</div>
+                            <div class="termos-content-text" id="tos-text">Loading...</div>
+                        </div>
+                        
+                        <div class="termos-content-box" id="law-content">
+                            <div class="termos-content-title">Legal Terms</div>
+                            <div class="termos-content-text" id="law-text">Loading...</div>
+                        </div>
+                    </div>
+                    
+                    <div class="termos-checkboxes">
+                        <label class="checkbox-label">
+                            <input 
+                                type="checkbox" 
+                                id="termos-idade" 
+                                name="termos.idade" 
+                                required
+                                aria-required="true"
+                            >
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">I attest that I am over 18 years old. *</span>
+                        </label>
+                        
+                        <label class="checkbox-label">
+                            <input 
+                                type="checkbox" 
+                                id="termos-concordancia" 
+                                name="termos.concordancia" 
+                                required
+                                aria-required="true"
+                            >
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">I have read and agree with the terms stated above. *</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+            
+            <h2 class="section-group-title">Art Briefing</h2>
+            
+            <section class="artes-section">
+                <div class="card artes" id="artes-card">
+                    <header class="card-title">📝 Desired Art Description</header>
+                    
+                    <div class="artes-container" id="artes-container">
+                        <!-- Artes serão geradas dinamicamente aqui -->
+                    </div>
+                    
+                    <button type="button" class="btn-add" id="btn-add-arte" aria-label="Add new art description">
+                        ＋ Add art
+                    </button>
+                </div>
+            </section>
+            
+            <section class="orcamento-section">
+                <div class="card orcamento" id="orcamento-card">
+                    <header class="card-title">💰 Budget & Urgency</header>
+                    
+                    <div class="field-group">
+                        <label>Currency *</label>
+                        <div class="currency-selector" role="radiogroup" aria-label="Select currency">
+                            <button type="button" class="currency-btn" data-currency="BRL" aria-pressed="false">
+                                BRL (R$)
+                            </button>
+                            <button type="button" class="currency-btn active" data-currency="USD" aria-pressed="true">
+                                USD ($)
+                            </button>
+                            <button type="button" class="currency-btn" data-currency="EUR" aria-pressed="false">
+                                EUR (€)
+                            </button>
+                        </div>
+                        <div class="price-table" id="price-table"></div>
+                    </div>
+                    
+                    <div class="field-group">
+                        <label>Price Range *</label>
+                        <div class="range-container">
+                            <div class="range-wrapper">
+                                <input type="range" class="range-input range-min" min="0" max="300" value="35" step="5" id="range-min">
+                                <input type="range" class="range-input range-max" min="0" max="300" value="200" step="5" id="range-max">
+                                <div class="range-track"></div>
+                            </div>
+                            <div class="range-inputs">
+                                <div class="range-input-group">
+                                    <label for="price-min">Minimum</label>
+                                    <input type="number" class="price-input" id="price-min" min="0" max="300" placeholder="Minimum ($)" step="5">
+                                </div>
+                                <div class="range-input-group">
+                                    <label for="price-max">Maximum</label>
+                                    <input type="number" class="price-input" id="price-max" min="0" max="300" placeholder="Maximum ($)" step="5">
+                                </div>
+                            </div>
+                            <small class="error" id="price-error" role="alert"></small>
+                            <p class="price-info-text">Above are the expected values for each type of drawing. This may change according to the complexity of the drawing: if there is a background, if there are objects, speech bubbles, ...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="field-group">
+                        <label>Urgency *</label>
+                        <div class="urgency-selector" role="radiogroup" aria-label="Select urgency">
+                            <button type="button" class="urgency-btn" data-urgency="indeterminado" aria-pressed="false">
+                                Indeterminate Deadline
+                            </button>
+                            <button type="button" class="urgency-btn" data-urgency="data" aria-pressed="false">
+                                Specific Date
+                            </button>
+                            <button type="button" class="urgency-btn" data-urgency="urgente" aria-pressed="false">
+                                Urgent
+                            </button>
+                        </div>
+                        <div class="urgency-content" id="urgency-content"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="characters-section">
+                <h2 class="section-title">Character Information</h2>
+                
+                <div class="characters-section-wrapper">
+                    <button type="button" class="btn-add-character" id="btn-add-character" aria-label="Add new character">
+                        ＋
+                    </button>
+                    <div id="characters-container" class="characters-container">
+                        <!-- Character cards will be generated dynamically here -->
+                    </div>
+                </div>
+
+                <div class="submit-section">
+                    <h3 class="submit-title">And when you're ready to submit...</h3>
+                    <button id="submit-btn" class="submit-btn" aria-label="Submit complete briefing">
+                        ✨ Lets Go! ✨
+                    </button>
+                    <div id="success-message" class="success-message" role="alert" aria-live="polite"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-signature">
+                <img src="figure/img/signature.png" alt="Signature" class="signature-image">
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KattyArtwork - kattyartwork.com | All rights reserved 💜</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
