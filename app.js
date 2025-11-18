@@ -2273,6 +2273,8 @@ async function handleSubmit() {
             cliente: {
                 nome: clienteData ? clienteData.nome : '',
                 email: clienteData ? clienteData.email : '',
+                pronomes: clienteData ? clienteData.pronomes : '',
+                telefone: clienteData ? clienteData.telefone : '',
                 redes: clienteData && clienteData.contatos && clienteData.contatos.length > 0
                     ? clienteData.contatos.map(c => `${c.tipo}: ${c.valor}`).join(', ')
                     : ""
@@ -2343,5 +2345,3 @@ function showSuccessMessage(orderId) {
         successMessage.classList.remove('show');
     }, 5000);
 }
-
-
